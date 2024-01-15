@@ -104,3 +104,46 @@ Regra geral, o limite superior é determinado pela saturação e o inferior pelo
 
 [Efeito de undersampling sobre imagem](efeito_de_undersampling_sobre_imagem.png)
 
+# Aula 1-2
+
+## Transformações básicas
+
+### Negativo:
+
+Em que f(x,y) = Intensidade do pixel
+L é a intensidade máxima do pixel (255)
+g(x,y) = Intensidade do após transformação
+g(x,y) = (L - 1) - f(x,y)
+
+### Translação
+Importante assegurar que o deslocamento não seja maior que a dimensão da imagem.
+
+Translada a imagem
+g(x, y) = g(x + a, y+ b)
+
+### Resize
+Redimensionamento da imagem
+
+### Reflexão
+
+Refletir a imagem em um dado eixo.
+
+### Reflexão + Translação
+
+Reflete e translada uma image
+
+### Rotação
+
+M = [cos(theta), -sin(theta)
+    sin(theta), cos(theta)]
+
+Rotação em escala olhar no openCV
+
+### Rotação geral (Warp affine)
+
+- Transformação afim: Preserva a colinearidade e o paralelismo bem como a razão das distâncias entre os pontos
+Ex: O ponto médio permanece os mesmos, mas não preserva necessáriamente distâncias e ângulos.
+
+
+   
+

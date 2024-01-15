@@ -144,6 +144,45 @@ Rotação em escala olhar no openCV
 - Transformação afim: Preserva a colinearidade e o paralelismo bem como a razão das distâncias entre os pontos
 Ex: O ponto médio permanece os mesmos, mas não preserva necessáriamente distâncias e ângulos.
 
+## Transformações básicas em nível de cinza
 
-   
+g(x, y) = T[f(x,y)]
+
+T é uma transformação.
+
+A forma mais simples de transformação envolve um pixel.
+Utilizar uma T(r), transformação logística. Em que **r** é um Threshold.
+### Transformação linear
+
+s = T(r) = (L - 1) - r
+
+### Transformação logaritmica
+
+s = c log(1+r) r>=0
+
+c é definido de forma que s_max = 255
+
+c = 255/log(1+R) para R = r_max
+
+### Correção gama
+Correção gama exemplo de uso:
+Clarear uma imagem
+Escurecer uma imagem
+
+s = c r^(gama)
+
+### Estiramente de contraste
+
+r1 = r2 e s1 = 0 e s2 = L-1
+Utiliza uma função de threshold.
+
+O alargamento do contraste é obtido através de
+
+(r1, s1) = (r_min, 0) e (r2, s2)= (r_max, L-1)
+
+r_min e r_max são os máximos minimos dos pixels.
+
+### Fatiamento de níveis de cinza
+
+Transformação por faixas de intensidade de pixel.
 

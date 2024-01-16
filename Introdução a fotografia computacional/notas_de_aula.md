@@ -2,7 +2,6 @@
 O que é fotografia e introdução histórica sobre fotografia.
 Entendimento sobre o que é cor e percepções básicas de cores.
 
-
 ## Tipos de imagens
 
 ### Imagens digitais
@@ -184,5 +183,50 @@ r_min e r_max são os máximos minimos dos pixels.
 
 ### Fatiamento de níveis de cinza
 
-Transformação por faixas de intensidade de pixel.
+Faixas de intensidade de pixel. (Piecewise Function)
+Fatiamento por planos de bits.
 
+## Histograma
+
+Gráfico de barras que mostra distribuição de frequÊncia
+Ilustra distribuição de uma amostra de dados.
+
+### Histograma aplicados a imagens
+
+Conseguimos utilizar histogramas para entender a distribuição das intensidades de cada pixel
+
+### Histograma - Equalização
+
+Equalização é uma forma de transformação, utilizando um histograma de forma a redistribuir a distribuição dos pixels.
+
+Nem toda equalização vai melhorar a imagem.
+
+Passo a Passo
+1- Normalize a distribuição de r_k
+2- Cálcule a distribuição acumulada
+3- Multiplicar os valores da distribuição acumulada pelo Pixel de intensidade máxima (L-1), e arredondar o número final
+4- Mapeamento dos bins (Valor de r_k, com valor final obtido)
+
+### Histograma - Realce Local
+
+Fazer a equalização usando uma vizinhança 7 x 7 sobre cada pixel
+
+### Histograma - Realce de Imagem baseado em estatísticas locais
+
+Utiliza o momento e desvio padrão para fazer a equalização
+
+### Histograma - Fotografias em diferentes celulares
+
+Diferentes celulares vão ter histogramas diferentes
+
+### Realce usando operações aritmétricas/Lógicas
+
+Realiza o realce só em parte da imagem
+
+### Realce usando operações aritmétrica/Lógicas Subtração de imagens
+
+Uso de subtração de imagens para realce
+
+
+
+# Aula 1-3

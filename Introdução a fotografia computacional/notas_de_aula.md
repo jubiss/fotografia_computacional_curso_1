@@ -227,6 +227,127 @@ Realiza o realce só em parte da imagem
 
 Uso de subtração de imagens para realce
 
-
-
 # Aula 1-3
+
+Continuação da aula 2 de realce
+
+### Realce usando operações aritmétrica/Lógicas médias de imagens
+
+g(x, y) = f(x, y) + n(x, y)
+
+g_medio(x, y) = (sum_i^k g_i(x, y))/k
+
+## Fundamentos de Filtros espaciais
+
+Adiciona pesos ao longo de uma máscara (ex: Máscara 3x3)
+
+É mostrado o fundamento e funcionamento das máscaras em tremos matemáticos
+
+Para realização do filtro, se multiplica os pesos da mascara pelas intensidades da imagem, é gerado um valor resultando no pixel central.
+
+Após a convolução perdemos as bordas da imagem.
+
+### Filtros espaciais de suavização
+
+#### Filtro utilizando a média
+Utilizado para borramento e redução do ruido,
+Borramento: Remoção de pequenos detalhes de uma imagem antes da extração de objetos.
+Redução de ruído: Obtida com borramento com filtro linear ou filtragem não linear.
+
+Tipos de filtragem espacial passa-baixa:
+- Utiliza a média dos vizinhos
+- Gera uma imagem borrada
+- Pode reduzir o ruído
+
+Durante a filtragem é feito uma filtagem normalizada.
+
+ #### Filtro utilizando a mediana
+
+ Mesma coisa que a média mas usando a mediana
+
+- Melhor na redução de ruído
+
+#### Filtro espacial de aguçamente
+
+- Objetivo: Enfatizar detalhes finos ou realçar detalhes tenham sido borrados
+- Média tende a borrar os detalhes, diferenciação faz o oposto ressaltando as variações e contornos
+
+- Borramento - Integração
+- Aguçamento - Diferenciação
+
+Tipos de filtros de aguçamento
+
+1- Espacial passa-altas básico
+2- Por alto reforço
+3- Derivadas
+
+#### Filtragem espacial psasa-altas básica
+
+Formas de ver:
+- Seção transversal ao filtro no domínio da frequência
+
+Para frequências menores temos a atenuação de sinal
+Frequências maiores são passadas
+
+- Seção transversal do filtro no domínio espacial
+A função fica cada vez mais próxima do pixel central
+
+- Positivo no centro e negativo nos arredores
+#### Filtragem espacial por alto reforço
+
+- Desaguçamento ou mascara de unsharp
+- Filtro passa-alta = original - passa-baixa (desaguçamento)
+
+1- É realizado um borramento sobre a imagem
+2- É feita a subtração dessa imagem suavizada na original
+3- Com a adição do resultado final a parte de alta frequência é intensificada
+
+A=1 Filtro padrão passa alta
+
+A> 1 Filtro Alto reforço
+
+Filtro passa alta em que o centro soma por um valor A
+
+## Filtros espaciais
+
+### Filtros por derivadas
+
+Como diferencias uma imagem digital
+
+Op1: Fazer a imagem se tornar contínua
+
+Op2: Utilizar a derivação discreta
+
+### Detecção de boarda
+
+1- Se detecta uma borda a partir dos máximos ou mínimos de primeira derivada
+
+2- Encontrar o valor da segunda derivada
+
+Pode ser feito com derivadas normais ou parciais
+
+### Filtro Laplaciano
+
+Filtro invariante em rotação (Isotrópicos)
+
+Filtros laplacianos com 4 vizinhanças
+
+Filtros laplacianos com 8 vizinhanças
+
+### Filtro Gradiente
+
+- Magnitudo é variante com rotação (Não isotropica)
+- Implementação computacional é não trivial
+- É comum a aproximação da magnitude do gradiente usando valores absolutos
+
+Gradiente diferença entre os vizinhos
+
+Gradiente de Roberts, diferença entre vizinhos cruzados
+
+Filtro de Sobel
+Serve para detectar contorno
+
+Filtro de Prewitt
+
+Observa as derivadas horizontais e verticais
+

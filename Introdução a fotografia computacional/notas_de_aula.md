@@ -74,7 +74,7 @@ CMOS fotos mais nitidas e menos ruidosas
 SCMOS (Tráz o melhor do CCD e do CMOS)
 
 ### Modelo de imagem simples
-![Modelo de imagem simples](modelo_de_imagem_simples.png)
+![Modelo de imagem simples](imagens/modelo_de_imagem_simples.png)
 
 L_{min} e L_{max} dependem do sensor.
 
@@ -97,11 +97,11 @@ A região saturada tem um nível de intensidade alto e constante.
 Regra geral, o limite superior é determinado pela saturação e o inferior pelo ruído.
 
 ### Memória ocupada para representar a imagem
-![Memoria Ocupada por tipo de imagem](memoria_ocupada_por_tamanho_de_imagem.png)
+![Memoria Ocupada por tipo de imagem](imagens/memoria_ocupada_por_tamanho_de_imagem.png)
 
 ### Efeito do undersampling sobre solução da imagem!
 
-[Efeito de undersampling sobre imagem](efeito_de_undersampling_sobre_imagem.png)
+![Efeito de undersampling sobre imagem](imagens/efeito_de_undersampling_sobre_imagem.png)
 
 # Aula 1-2
 
@@ -350,4 +350,54 @@ Serve para detectar contorno
 Filtro de Prewitt
 
 Observa as derivadas horizontais e verticais
+
+
+# Aula 1-4
+Aula sobre transformações no dominio da frequência
+
+Série de Fourrier: Utilizado para funções periódicas
+
+Transformada de Fourier: Funções que não são periódicas, mas que possui uma área abaixo da curva um valor finito
+
+Séries e transfomadas de Fourier conseguem ser invertidas
+
+## Fluxo:
+Pré processamento -> Transformada de Fourrier -> Filtro no dominio da frequência -> Transformada inversa -> Pós processamento
+
+## Procedimento:
+![procedimento filtragem na frequência](<imagens/procedimento filtragem na frequência.png>)
+
+## Tipos de filtros:
+Passa baixa (suavização, borramento)
+    Preserva baixa frequência
+    Suprime as altas frequências
+Passa alta (realce das bordas, aguçamento)
+    Preserva altas frequência
+    Suprime baixas frequências
+Passa faixa (Restauração de imagens)
+    Preserva frequência especificas
+    Suprime o resto
+
+
+## Filtro básico:
+
+Filtro tipo Notch ou rejeita faixa
+0 se satisfaz condição ou 1
+
+### Filtro Ideal (Passa-baixa) LPF
+
+É definido 1 se for maior que um valor 0 se contrario
+
+### Filtros utilizados para cortes suaves
+Filttro de Butterworth ou filtro gaussiano passa-baixa
+
+### Filtragem por alto reforço
+
+passa-altas = normal - passa baixa
+É possível usar o laplaciano para fazer o desaguçamento (Unsharp Masking)
+
+### Filtragem com enfase em alta frequência (HFE)
+
+### Filtragem Homomórfica
+
 
